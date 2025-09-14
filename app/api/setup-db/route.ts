@@ -3,6 +3,11 @@ import { supabaseAdmin } from '@/lib/supabase/admin'
 
 export async function POST() {
   try {
+    if (!supabaseAdmin) {
+      return NextResponse.json({ 
+        error: 'Supabase configuration not available' 
+      }, { status: 500 })
+    }
     // Create the schema with all tables at once
     const schemaQuery = `
       -- Create brands table
