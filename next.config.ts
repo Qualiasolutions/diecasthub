@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  experimental: {
+    turbo: {
+      root: '/home/qualiasolutions/Desktop/Diecast/diecast-hub'
+    }
   }
 };
 
